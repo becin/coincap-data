@@ -1,0 +1,71 @@
+### 	coincap-data is software designed to:
+###
+###		Pull coin data
+###		using data from coinmarketcap.com API	
+###		for the top 100 coins
+###		and enter it into a mySQL database
+###
+###
+###	Some helpful SQL scripts can be found in this file
+###
+###
+###
+###	Copyright 2017, Chris Becin
+###
+###	This file is part of coincap-data.
+###
+###	coincap-data is free software: you can redistribute it and/or modify
+###	it under the terms of the GNU General Public License as published by
+###	the Free Software Foundation, either version 3 of the License, or
+###	(at your option) any later version.
+###
+###	coincap-data is distributed in the hope that it will be useful,
+###	but WITHOUT ANY WARRANTY; without even the implied warranty of
+###	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+###	GNU General Public License for more details.
+###
+###	You should have received a copy of the GNU General Public License
+###	along with coincap-data.  If not, see <http://www.gnu.org/licenses/>.
+###
+###	The author cannot be held accountable for lost data, broken machines, 
+###	gaping memory holes, lost time, or any other consequences of using 
+###	this software.
+###
+###	Use at your own risk!
+###
+###
+
+
+
+
+### These are some SQL statements I used to create the table & add a unique key
+### Note: did not include the statements to create user & database, you're on your own!
+
+
+
+
+# This is the statement to create a new table based on the data source
+
+CREATE TABLE IF NOT EXISTS coincap_raw (
+	row_id INT NOT NULL AUTO_INCREMENT,
+	price_usd FLOAT, 
+	symbol VARCHAR(10) NOT NULL,
+	rank INT,
+	coin_id VARCHAR(10) NOT NULL,
+	volume_usd BIGINT,
+	available_supply BIGINT,
+	last_updated DATETIME NOT NULL,
+	name VARCHAR(40) NOT NULL,
+	percent_change_1h FLOAT,
+	percent_change_24h FLOAT,
+	percent_change_7d FLOAT,
+	price_btc FLOAT,
+	
+	PRIMARY KEY (row_id)
+	);
+
+	
+	
+# This is the statement to create a unique key based on symbol & last_updated
+
+ALTER TABLE coincap_raw ADD UNIQUE KEY index1 (symbol, last_updated);
