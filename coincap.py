@@ -19,8 +19,8 @@
 ###
 ###
 ###	To install pip and the mysql.connector lib:
-###		1. Command to install pip
-###			'sudo apt-get install pip'
+####		1. Command to install pip
+####			NEED TO ADD THIS
 ###		2. Command to install mysql.connector
 ###			'pip install mysql-connector'
 ###
