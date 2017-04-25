@@ -21,10 +21,10 @@ Some helpful SQL scripts can be found in the "SQL_scripts" file
 
 
 To install pip and the mysql.connector lib:
-	1. Command to install pip
-		'sudo apt-get install pip'
-	2. Command to install mysql.connector
-		'pip install mysql-connector'
+		1. Command to install pip
+			'sudo apt-get install python-pip'
+		2. Command to install mysql.connector
+			'pip install mysql-connector-python-rf'
 
 
 Copyright 2017, Chris Becin
